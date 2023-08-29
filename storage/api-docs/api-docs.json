@@ -1,0 +1,74 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Swagger Dökümantasyon",
+        "version": "0.1"
+    },
+    "paths": {
+        "/customers": {
+            "get": {
+                "tags": [
+                    "present tablo"
+                ],
+                "summary": "belirtilen path ile ilgili tablonun verileri",
+                "operationId": "cffed03e9ed18b8bb140d799890d156e",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "db'den çekilecek veri sınırı",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "verileri almadan önce atlanacak öğe sayısı",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "404": {
+                        "description": "Not acceptable"
+                    }
+                }
+            }
+        },
+        "/connected_customer/{id}": {
+            "get": {
+                "tags": [
+                    "present ilişkili tablo"
+                ],
+                "summary": "belirtilen path ile ilişkili tabloların verileri",
+                "operationId": "9c53598e5154f0b9a5cace2032782b84",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id parametresi gerekli",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "404": {
+                        "description": "Not acceptable"
+                    }
+                }
+            }
+        }
+    }
+}
